@@ -12,7 +12,14 @@ if exists("g:potential_memory_loaded")
 endif
 let g:potential_memory_loaded = 1
 
-function! potentialmemory#origin_url()
-    let origin_url = fugitive#repo().config('remote.origin.url')
-    return origin_url
+function! potentialmemory#current_branch()
+    return fugitive#repo().head()
+endfunction
+
+function! potentialmemory#branch_remote(branch)
+    return fugitive#repo().config('branch.' . a:branch . '.remote')
+endfunction
+
+function! potentialmemory#remote_url(remote)
+    return fugitive#repo().config('remote.'.a:remote.'.url')
 endfunction
