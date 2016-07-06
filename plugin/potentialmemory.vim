@@ -20,6 +20,8 @@ function! potentialmemory#branch_remote(branch)
     return fugitive#repo().config('branch.' . a:branch . '.remote')
 endfunction
 
+" TODO: Find a way to strip out connection protocol:
+" git@github.com:foo/bar == https://github.com/foo/bar == git://github.com/foo/bar
 function! potentialmemory#remote_url(remote)
     return fugitive#repo().config('remote.'.a:remote.'.url')
 endfunction
