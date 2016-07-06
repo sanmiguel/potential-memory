@@ -36,3 +36,5 @@ function! potentialmemory#current_remote_url()
     let remote = potentialmemory#branch_remote(branch)
     return potentialmemory#remote_url(remote)
 endfunction
+
+call potentialmemory#config#Load()
