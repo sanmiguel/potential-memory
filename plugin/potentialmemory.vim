@@ -26,6 +26,10 @@ function! potentialmemory#remote_url(remote)
     return fugitive#repo().config('remote.'.a:remote.'.url')
 endfunction
 
+function! potentialmemory#default_remote()
+    return 'origin'
+endfunction
+
 " TODO: Something useful when this branch has no tracking info
 function! potentialmemory#current_remote_url()
     let branch = potentialmemory#current_branch()
